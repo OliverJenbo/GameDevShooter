@@ -1,0 +1,4 @@
+- filter=lfs diff=lfs merge=lfs -text
+KopiLibraryArtifactDB filter=lfs diff=lfs merge=lfs -text
+GameDevExamGameDevShooterShooter filter=lfs diff=lfs merge=lfs -text
+Shooter[[:space:]]-[[:space:]]kopi/Library/ArtifactDB filter=lfs diff=lfs merge=lfs -text
