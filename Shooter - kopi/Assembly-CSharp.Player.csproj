@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{A1E27CBB-0914-3C93-771C-BCB21C782EDE}</ProjectGuid>
+    <ProjectGuid>{2925EABA-2796-8531-C452-F5664C81627C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -60,6 +60,7 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.13f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\PlayerHealthBar.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\Scripts\Enemy AI\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerUI.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\Scripts\Weapon\WeaponController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
+    <Compile Include="Assets\Healthbar.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
@@ -901,35 +903,35 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.Timeline.Player.csproj">
-      <Project>{8BC14CC8-3513-A6C7-06B9-2D7D8B508A20}</Project>
+      <Project>{EC76C740-82C0-E11F-7A4F-1DD9D2E986FD}</Project>
       <Name>Unity.Timeline.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.InputSystem.Player.csproj">
-      <Project>{7CCD5A32-81F2-C1D7-2559-5EA579D7028A}</Project>
+      <Project>{3FE5C771-9B08-88C0-0B96-E1FF361A79D5}</Project>
       <Name>Unity.InputSystem.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.InputSystem.ForUI.Player.csproj">
-      <Project>{FADCCBAB-FD1F-F5E0-0297-03F7EE76CABA}</Project>
+      <Project>{FA94D646-2B53-30F8-E756-8FFC7B0E6BFE}</Project>
       <Name>Unity.InputSystem.ForUI.Player</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.Player.csproj">
-      <Project>{874CE3F7-0E55-7C67-498A-8219B1798EDF}</Project>
+      <Project>{9BA3A489-BDF0-3182-3ABB-8443D99C6E37}</Project>
       <Name>UnityEngine.UI.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.Player.csproj">
-      <Project>{0BE6A73D-7565-B2FC-03EA-B7FA0017C6D0}</Project>
+      <Project>{D2977E50-ECAA-D8D9-6C2E-FE52FD2A948C}</Project>
       <Name>Unity.TextMeshPro.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Core.Player.csproj">
-      <Project>{DAF4C0DC-D355-494B-8AA4-42118817AD2D}</Project>
+      <Project>{EA0E2D2D-BF46-4A18-2674-D54F251DA336}</Project>
       <Name>Unity.VisualScripting.Core.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.State.Player.csproj">
-      <Project>{09EB8FE8-5DD9-EC26-2617-86702D77092C}</Project>
+      <Project>{57903787-E884-5104-7339-E356959A6C5A}</Project>
       <Name>Unity.VisualScripting.State.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Flow.Player.csproj">
-      <Project>{52A59959-6951-D20E-1F4E-7589857E048A}</Project>
+      <Project>{AE2A4328-92E4-5CBE-796E-8288B4177818}</Project>
       <Name>Unity.VisualScripting.Flow.Player</Name>
     </ProjectReference>
   </ItemGroup>
