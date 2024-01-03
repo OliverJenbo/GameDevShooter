@@ -84,15 +84,8 @@ public class PlayerMotor : MonoBehaviour
         }
     }
 
-    public void Weapon()
-    {
-        // Example: Check for input and shoot
-        if (Input.GetButtonDown("Fire1")) // Replace with your input method
-        {
-            weapon.Shoot();
-        }
-    }
     
+
 
 }
 

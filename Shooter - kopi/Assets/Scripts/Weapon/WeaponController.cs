@@ -3,32 +3,29 @@ using UnityEngine;
 public class WeaponController : MonoBehaviour
 {
     public GameObject bulletPrefab;
-    public Transform barrelEnd; // The end of the gun barrel
-    public Camera playerCamera; // Reference to the player's camera
-    public float bulletSpeed = 30.0f; // Set the speed of the bullet
+    public Transform barrelEnd;
+    public float bulletSpeed = 30.0f;
+    
 
-
-    void Update()
+    public void Shoot(Vector3 shootDirection)
     {
-        if (Input.GetButtonDown("Fire1")) // Change "Fire1" to your desired input control
-        {
-            Shoot();
-        }
-    }
-
-    public void Shoot()
-    {
-        // Instantiate the bullet at the end of the barrel
-        GameObject bullet = Instantiate(bulletPrefab, barrelEnd.position, playerCamera.transform.rotation);
-
-        // Set the bullet's velocity in the camera's forward direction
+        GameObject bullet = Instantiate(bulletPrefab, barrelEnd.position, Quaternion.LookRotation(shootDirection));
         Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
-        bulletRb.velocity = playerCamera.transform.forward * bulletSpeed;
+        bulletRb.velocity = shootDirection * bulletSpeed;
+        Debug.Log("Bullet Velocity: " + bulletRb.velocity);
     }
+
+    // This method is used by the player to shoot
+    public void PlayerShoot()
+    {
+        Shoot(Camera.main.transform.forward); // Using the camera's forward direction
+    }
+
+    // This method can be used by enemies to shoot
+    public void EnemyShoot()
+    {
+        Shoot(transform.forward); // Using the GameObject's forward direction
+    }
+
+    
 }
-
-
-
-   
-
-   

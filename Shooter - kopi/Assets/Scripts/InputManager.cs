@@ -5,14 +5,13 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
-
     private PlayerInput PlayerInput;
     public PlayerInput.OnFootActions onFoot;
 
     private PlayerMotor motor;
     private PlayerLook look;
+    private WeaponController weaponController;
 
-    // Start is called before the first frame update
     void Awake()
     {
         PlayerInput = new PlayerInput();
@@ -20,28 +19,34 @@ public class InputManager : MonoBehaviour
 
         motor = GetComponent<PlayerMotor>();
         look = GetComponent<PlayerLook>();
+        weaponController = GetComponent<WeaponController>();
+
+        if (weaponController == null)
+        {
+            Debug.LogError("WeaponController component not found on the GameObject");
+        }
 
         onFoot.Jump.performed += ctx => motor.Jump();
         onFoot.Crouch.performed += ctx => motor.Crouch();
         onFoot.Sprint.performed += ctx => motor.Sprint();
-        onFoot.Shoot.performed += ctx => motor.weapon.Shoot();
+        onFoot.Shoot.performed += ctx => weaponController.PlayerShoot(); // Use weaponController directly
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
-        //tell the playermotor to move using the value from our movement action.
         motor.ProcessMove(onFoot.Movement.ReadValue<Vector2>());
-        
     }
+
     private void LateUpdate()
     {
         look.ProcessLook(onFoot.Look.ReadValue<Vector2>());
     }
+
     private void OnEnable()
     {
         onFoot.Enable();
     }
+
     private void OnDisable()
     {
         onFoot.Disable();

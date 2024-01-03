@@ -359,6 +359,7 @@
 "Assets/Scripts/Enemy AI/EnemyHealth.cs"
 "Assets/Scripts/Enemy AI/EnemyHealthBar.cs"
 "Assets/Scripts/Enemy AI/EnemyMovement.cs"
+"Assets/Scripts/Enemy AI/EnemyShooting.cs"
 "Assets/Scripts/Enemy AI/EnemySight.cs"
 "Assets/Scripts/InputManager.cs"
 "Assets/Scripts/Interactable.cs"
