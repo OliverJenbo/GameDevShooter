@@ -363,6 +363,7 @@
 "Assets/Scripts/Enemy AI/EnemySight.cs"
 "Assets/Scripts/InputManager.cs"
 "Assets/Scripts/Interactable.cs"
+"Assets/Scripts/Interactables/EndGame.cs"
 "Assets/Scripts/Interactables/Keypad.cs"
 "Assets/Scripts/Player/PlayerHealth.cs"
 "Assets/Scripts/Player/PlayerHealthBar.cs"

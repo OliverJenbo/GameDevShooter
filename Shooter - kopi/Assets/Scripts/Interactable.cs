@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Interactable : MonoBehaviour
+public class Interactable : MonoBehaviour
 {
     //message displayed to player when looking at an interactable object.
     public string promptmessage;
@@ -14,6 +14,6 @@ public abstract class Interactable : MonoBehaviour
     }
     protected virtual void Interact()
     {
-        //template function to be overwritten in subclasses.
+        
     }
 }
