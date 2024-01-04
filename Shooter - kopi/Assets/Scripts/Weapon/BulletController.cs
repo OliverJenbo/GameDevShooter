@@ -2,17 +2,27 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-    public int damage = 15;
-   
+    
+
 
 
     void OnCollisionEnter(Collision collision)
     {
-        EnemyHealth enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
-        if (enemyHealth != null)
+        if (collision.gameObject.CompareTag("Player"))
         {
-            enemyHealth.TakeDamage(damage);
+            // Assuming player has a PlayerHealth component
+            int damage = 10; // Determine the damage value
+            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
         }
-        Destroy(gameObject); // Destroy the bullet after hitting
+        else if (collision.gameObject.CompareTag("Enemy"))
+        {
+            // Assuming enemies have an EnemyHealth component
+            int damage = 15; // Determine the damage value
+            collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
+        }
+
+        // Destroy the bullet after hitting something
+        Destroy(gameObject);
     }
+
 }

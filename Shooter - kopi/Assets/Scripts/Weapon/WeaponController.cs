@@ -5,27 +5,44 @@ public class WeaponController : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform barrelEnd;
     public float bulletSpeed = 30.0f;
-    
+    public AudioClip gunshotSound; // Assign this in the inspector
 
-    public void Shoot(Vector3 shootDirection)
+    private AudioSource audioSource;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    public void PlayerShoot()
+    {
+        Shoot(Camera.main.transform.forward);
+        PlayGunshotSound();
+    }
+
+    public void EnemyShoot()
+    {
+        Shoot(transform.forward);
+        PlayGunshotSound();
+
+    }
+
+    private void Shoot(Vector3 shootDirection)
     {
         GameObject bullet = Instantiate(bulletPrefab, barrelEnd.position, Quaternion.LookRotation(shootDirection));
         Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
         bulletRb.velocity = shootDirection * bulletSpeed;
-        Debug.Log("Bullet Velocity: " + bulletRb.velocity);
     }
 
-    // This method is used by the player to shoot
-    public void PlayerShoot()
+    public void PlayGunshotSound()
     {
-        Shoot(Camera.main.transform.forward); // Using the camera's forward direction
+        if (audioSource != null && gunshotSound != null)
+        {
+            audioSource.PlayOneShot(gunshotSound);
+        }
+        else
+        {
+            Debug.LogError("AudioSource or gunshot sound is missing on the weapon");
+        }
     }
-
-    // This method can be used by enemies to shoot
-    public void EnemyShoot()
-    {
-        Shoot(transform.forward); // Using the GameObject's forward direction
-    }
-
-    
 }
